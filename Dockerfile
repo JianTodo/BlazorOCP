@@ -25,6 +25,6 @@ COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "BlazorApplication.Server.dll"]
 
 #ENV ASPNETCORE_URLS=http://*:80
-#CMD ASPNETCORE_URLS=http://*:8080 dotnet BlazorApplication.Server.dll
 ENV ASPNETCORE_ENVIRONMENT=Development
 ENV ASPNETCORE_URLS=http://*:8080
+CMD ASPNETCORE_URLS=http://*:8080 dotnet BlazorApplication.Server.dll
