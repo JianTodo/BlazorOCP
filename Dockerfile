@@ -2,8 +2,8 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
 WORKDIR /app
-#EXPOSE 8080
-EXPOSE 80
+EXPOSE 8080
+#EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
@@ -24,6 +24,6 @@ WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "BlazorApplication.Server.dll"]
 
-ENV ASPNETCORE_URLS=http://*:80
+#ENV ASPNETCORE_URLS=http://*:80
 CMD ASPNETCORE_URLS=http://*:80 dotnet BlazorApplication.Server.dll
 
