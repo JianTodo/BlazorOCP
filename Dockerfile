@@ -11,7 +11,7 @@ WORKDIR /src
 COPY ["Server/BlazorApplication.Server.csproj", "BlazorApplication/Server/"]
 COPY ["Shared/BlazorApplication.Shared.csproj", "BlazorApplication/Shared/"]
 COPY ["Client/BlazorApplication.Client.csproj", "BlazorApplication/Client/"]
-RUN dotnet restore "Server/BlazorApplication.Server.csproj"
+RUN dotnet restore "BlazorApplication/Server/BlazorApplication.Server.csproj"
 COPY . .
 WORKDIR "/src/BlazorApplication/Server"
 RUN dotnet build "BlazorApplication.Server.csproj" -c Release -o /app/build
